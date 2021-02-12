@@ -10,7 +10,7 @@ on:
 
 jobs: 
   test:
-    name: testing ${{ matrix.channel }} channel on ${{ matrix.os }}
+    name: Tests
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -23,7 +23,7 @@ jobs:
           java-version: '12.x'
       - uses: subosito/flutter-action@v1
         with:
-          channel: ${{ matrix.channel }}
+          flutter-version: '1.22.4'
       - run: dart --version
       - run: flutter --version
       - run: flutter pub get
